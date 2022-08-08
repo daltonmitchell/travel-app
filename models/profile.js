@@ -5,8 +5,14 @@ const postSchema = require('./post')
 
 const profileSchema = new Schema({
     name: {type: String},
-    posts: [postSchema],
-    comments: [commentSchema]
+    posts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Post',
+    }],
+    comments: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Comment',
+    }]
 })
 
 module.exports = mongoose.model('Profile', profileSchema);
