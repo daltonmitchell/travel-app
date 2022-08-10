@@ -1,6 +1,6 @@
-import {useState, Component} from 'react';
+import {useState} from 'react';
 
-export default function ProfileForm({addProfile}) {
+export default function ProfileForm({addProfile, setProfile}) {
     const [formData, setFormData] = useState({
       name: '',
       error: ''
@@ -16,8 +16,8 @@ export default function ProfileForm({addProfile}) {
   
     function handleSubmit(evt) {
       evt.preventDefault();
-      console.log('handleSubmit hit')
       addProfile(formData);
+      setProfile(formData);
     }
   
     return (

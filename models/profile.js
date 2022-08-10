@@ -5,6 +5,7 @@ const postSchema = require('./post')
 
 const profileSchema = new Schema({
     name: {type: String},
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
     posts: [{
         type: Schema.Types.ObjectId,
         ref: 'Post',
