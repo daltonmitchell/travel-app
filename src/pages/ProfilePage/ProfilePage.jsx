@@ -1,14 +1,10 @@
-import { checkToken } from "../../utilities/users-service";
 import ProfileForm from "../../components/ProfileForm/ProfileForm";
+import PostForm from "../../components/PostForm/PostForm";
 import * as profilesAPI from '../../utilities/profiles-api';
+import * as postsAPI from '../../utilities/posts-api';
 import {useEffect} from 'react';
 
-export default function ProfilePage({user, profile, setProfile}) {
-  async function handleCheckToken(){
-    const expDate = await checkToken();
-    console.log(expDate);
-  }  
-
+export default function ProfilePage({user, profile, setProfile, post, setPost, location, setLocation}) {
   async function addProfile(formData){
     const profile = await profilesAPI.add(formData)
     setProfile(profile);
@@ -20,16 +16,22 @@ export default function ProfilePage({user, profile, setProfile}) {
     setProfile(profile);
   }
   getProfile();
-  })
+  }, [])
 
-  console.log(profile)
+  useEffect(() => {
+    async function getPosts(){
+      const posts = await postsAPI.get();
+      console.log(posts)
+      setPost(posts);
+    }
+    getPosts();
+  }, [])
 
   return (
       <>
-        <h1>{user.name}</h1>
         <p>{profile.name}</p>
         { profile ? null : <ProfileForm user={user} setProfile={setProfile} addProfile={addProfile} /> }
-        <button onClick={handleCheckToken}>Check When My Login Expires</button>
+        <PostForm setPost={setPost} location={location} setLocation={setLocation} />
       </>
     );
   }

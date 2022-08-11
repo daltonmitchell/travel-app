@@ -18,6 +18,8 @@ app.use(require('./config/checkToken'));
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/profiles', require('./routes/api/profiles'));
+app.use('/api/locations', require('./routes/api/locations'));
+app.use('/api/posts', require('./routes/api/posts'));
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
