@@ -11,14 +11,12 @@ export default function ProfilePage({user, profile, setProfile, post, setPost, l
   }
   
   useEffect (() => {
-  async function getProfile(){
-    const profile = await profilesAPI.get();
-    setProfile(profile);
-  }
-  getProfile();
-  }, [])
-
-  useEffect(() => {
+    async function getProfile(){
+      const profile = await profilesAPI.get();
+      setProfile(profile);
+    }
+    getProfile();
+    
     async function getPosts(){
       const posts = await postsAPI.get();
       console.log(posts)
@@ -27,11 +25,20 @@ export default function ProfilePage({user, profile, setProfile, post, setPost, l
     getPosts();
   }, [])
 
+  const eachPost = post.map((el, idx)=>{
+    return (
+      <div>
+        <p key={idx} value={el}>{el.body}</p>
+        <p key={idx} value={el}>{el.location}</p>
+      </div>
+  )})
+
   return (
       <>
         <p>{profile.name}</p>
         { profile ? null : <ProfileForm user={user} setProfile={setProfile} addProfile={addProfile} /> }
         <PostForm setPost={setPost} location={location} setLocation={setLocation} />
+        {eachPost}
       </>
     );
   }
