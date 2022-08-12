@@ -11,7 +11,7 @@ import NavBar from '../../components/NavBar/NavBar';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [profile, setProfile] = useState({});
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState([]);
   const [location, setLocation] = useState([])
 
   return (

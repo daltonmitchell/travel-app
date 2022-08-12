@@ -25,16 +25,16 @@ export default function ProfilePage({user, profile, setProfile, post, setPost, l
     getPosts();
   }, [])
 
-  const eachPost = post.map((el, idx)=>{
+  const eachPost = post ? post.map((el, idx)=>{
     return (
-      <div>
-        <p key={idx} value={el}>{el.body}</p>
-        <p key={idx} value={el}>{el.location}</p>
+      <div key={idx}>
+        <p>{el.body}</p>
+        <p>{el.location.city}, {el.location.state}</p>
       </div>
-  )})
+  )}) : null
 
   return (
-      <>
+    <>
         <p>{profile.name}</p>
         { profile ? null : <ProfileForm user={user} setProfile={setProfile} addProfile={addProfile} /> }
         <PostForm setPost={setPost} location={location} setLocation={setLocation} />

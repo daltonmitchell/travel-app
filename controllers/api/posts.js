@@ -8,9 +8,18 @@ module.exports = {
 
 async function get(req, res){
     try{
-        const profile = await Profile.findOne({user: req.user._id});
+        const profile = await Profile.findOne({user: req.user._id})
+        .populate({
+            path: 'posts',
+            populate: {
+                path: 'location'
+            }
+        })
+        // .exec(function (err, doc){
+        //     console.log(doc)
+        // });
         const posts = profile.posts
-        console.log(posts);
+        console.log(posts)
         res.json(posts);
     } catch(err){
         console.log(err)
