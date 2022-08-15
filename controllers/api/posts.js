@@ -6,6 +6,7 @@ module.exports = {
     create,
     getOne,
     update,
+    delete: deletePost,
 }
 
 async function get(req, res){
@@ -55,6 +56,18 @@ async function update(req, res){
         console.log(req.body)
         const post = await Post.findByIdAndUpdate(req.params.id, {"body" : req.body.body, "location" : req.body.location});
         post.save();
+    } catch(err){
+        res.status(400).json(err);
+    }
+}
+
+async function deletePost(req, res){
+    try {
+        const profile = await Profile.findOne({user: req.user._id})
+        const idx = profile.posts.indexOf(req.params.id);
+        profile.posts.splice(idx, 1);
+        profile.save();
+        let post = await Post.findByIdAndDelete(req.params.id);
     } catch(err){
         res.status(400).json(err);
     }

@@ -16,3 +16,7 @@ export async function add(formData){
 export async function update(formData, id){
     return sendRequest(`${BASE_URL}/${id}/update`, 'PUT', formData);
 }
+
+export async function deletePost(id){
+    return sendRequest(`${BASE_URL}/${id}/delete`, 'DELETE')
+}

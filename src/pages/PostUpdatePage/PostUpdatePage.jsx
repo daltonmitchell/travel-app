@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import * as postsAPI from '../../utilities/posts-api';
 import * as locationsAPI from '../../utilities/locations-api';
 
 export default function PostUpdatePage({location, setLocation}){
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         body: '',
@@ -27,6 +28,7 @@ export default function PostUpdatePage({location, setLocation}){
     function handleSubmit(evt){
         evt.preventDefault();
         updatePost(formData);
+        navigate(-1)
     }
 
     useEffect (() => {
