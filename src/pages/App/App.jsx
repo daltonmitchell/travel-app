@@ -3,7 +3,8 @@ import {useState} from 'react'
 import LocationPage from '../LocationPage/LocationPage';
 import AuthPage from '../AuthPage/AuthPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import { Routes, Route } from 'react-router-dom';
+import PostDetailPage from '../PostDetailPage/PostDetailPage';
+import { Routes, Route, useParams } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 
@@ -30,6 +31,7 @@ export default function App() {
               location={location} 
               setLocation={setLocation}
                />} />
+            <Route path="/post/:id" element={<PostDetailPage />} />
           </Routes>
         </>
         :

@@ -7,6 +7,8 @@ export default function LocationPage({location, setLocation}) {
     await locationsAPI.add(formData)
   }
 
+  const [showForm, setShowForm] = useState(false);
+
   useEffect (() => {
     async function getLocation(){
       const location = await locationsAPI.get();
@@ -14,9 +16,8 @@ export default function LocationPage({location, setLocation}) {
       console.log(location)
     }
     getLocation();
-    }, [])
+    }, [showForm])
 
-  const [showForm, setShowForm] = useState(false);
   
   function handleClick(){
     if(showForm===false){
@@ -28,8 +29,8 @@ export default function LocationPage({location, setLocation}) {
   
   const eachLocation = location.map((el, idx)=>{
     return (
-      <div>
-        <p key={idx} value={el}>{`${el.city}, ${el.state}`}</p>
+      <div key={idx}>
+        <p>{`${el.city}, ${el.state}`}</p>
       </div>
   )})
 

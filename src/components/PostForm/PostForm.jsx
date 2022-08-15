@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import * as postsAPI from '../../utilities/posts-api';
 import * as locationsAPI from '../../utilities/locations-api';
 
-export default function PostForm({setPost, location, setLocation}) {
+export default function PostForm({setPost, location, setLocation, postAdded, setPostAdded}) {
     const [formData, setFormData] = useState({
       body: '',
       location: '',
@@ -22,8 +22,17 @@ export default function PostForm({setPost, location, setLocation}) {
     }
   
     function handleSubmit(evt) {
-      evt.preventDefault();
       addPost(formData);
+      setFormData({
+        body: '',
+        location: '',
+        error: ''
+      });
+      if(postAdded===false){
+        setPostAdded(true);
+      } else {
+        setPostAdded(false);
+      }
     }
 
     useEffect (() => {
@@ -47,6 +56,7 @@ export default function PostForm({setPost, location, setLocation}) {
             <input type="text" name="body" value={formData.body} onChange={handleChange} required />
             <label>Location: </label>
             <select name="location" value={formData.location} onChange={handleChange} required >
+              <option></option>
               {eachLocation}
             </select>
             <button type="submit">Submit</button>
