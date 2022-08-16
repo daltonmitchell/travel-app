@@ -1,17 +1,17 @@
-#WanderLust
+# WanderLust
 A social app with posts centered around travel destinations.
 
-##Technologies Use
+## Technologies Use
 Mongoose, Mongodb Atlas, Express, React, node.js.
 
-##Getting Started
+## Getting Started
 https://travel-app-sei.herokuapp.com/
 Trello: https://trello.com/b/EtBkjUb2/project-4
 
-##Unsolved Problems
+## Unsolved Problems
 Posts on profile require refresh in order to be viewed. 
 
-##Icebox
+## Icebox
 AAU follow and view other users profiles and posts.
 AAU view location pages and related posts.
 Add photos to posts and profiles.
