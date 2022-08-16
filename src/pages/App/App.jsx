@@ -20,7 +20,7 @@ export default function App() {
     <main className="App">
       { user ?
         <>
-          <NavBar user={user} setUser={setUser} />
+          <NavBar user={user} setUser={setUser} setPost={setPost} setProfile={setProfile} />
           <Routes>
             <Route path="/location" element={<LocationPage location={location} setLocation={setLocation} />} />
             <Route path="/profile" element={<ProfilePage 

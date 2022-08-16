@@ -19,17 +19,14 @@ export default function ProfilePage({user, profile, setProfile, post, setPost, l
       const profile = await profilesAPI.get();
       setProfile(profile);
     }
-    getProfile();
-  
-    async function getPosts(){
-      const posts = await postsAPI.get();
-      console.log(posts)
-      setPost(posts);
+    
+    if(user){
+      console.log('hitting useeffect')
+      getProfile();
     }
-    getPosts();
-  }, [postAdded, setPost, setProfile])
+  }, [user])
 
-  const eachPost = post ? post.map((el, idx)=>{
+  const eachPost = profile?.posts ? profile.posts.map((el, idx)=>{
     return (
       <div className='postCell' key={idx}>
         <Link to={`/post/${el._id}`} className='postLink'>

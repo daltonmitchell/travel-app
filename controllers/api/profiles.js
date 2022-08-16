@@ -17,6 +17,11 @@ async function create(req, res){
 }
 
 async function get(req, res){
-    const profile = await Profile.findOne({user: req.user._id});
+    const profile = await Profile.findOne({user: req.user._id}).populate({
+        path: 'posts',
+            populate: {
+                path: 'location'
+            }
+    });
     res.json(profile)
 }
