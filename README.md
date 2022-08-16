@@ -5,7 +5,8 @@ A social app with posts centered around travel destinations.
 Mongoose, Mongodb Atlas, Express, React, node.js.
 
 ## Getting Started
-https://travel-app-sei.herokuapp.com/
+Deployed: https://travel-app-sei.herokuapp.com/
+/
 Trello: https://trello.com/b/EtBkjUb2/project-4
 
 ## Unsolved Problems
