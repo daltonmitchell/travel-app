@@ -6,7 +6,7 @@ Mongoose, Mongodb Atlas, Express, React, node.js.
 
 ## Getting Started
 Deployed: https://travel-app-sei.herokuapp.com/
-/
+<br />
 Trello: https://trello.com/b/EtBkjUb2/project-4
 
 ## Unsolved Problems
