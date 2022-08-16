@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './PostUpdatePage.css';
 import * as postsAPI from '../../utilities/posts-api';
 import * as locationsAPI from '../../utilities/locations-api';
 
@@ -47,7 +48,7 @@ export default function PostUpdatePage({location, setLocation}){
     return (
         <>
             <h1>Post Update</h1>
-            <div className="form-container">
+            <div className="form-container updateForm">
                 <form autoComplete="off" onSubmit={handleSubmit}>
                     <label>Post:</label>
                     <input type="text" name="body" value={formData.body} onChange={handleChange} required />

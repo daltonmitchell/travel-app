@@ -1,8 +1,18 @@
-.postCell{
-    background-color: rgb(227, 216, 216);
-    border-radius: 25px;
-    margin: 20px auto;
-    padding: 20px;
-    width: 200px;
-    height: 150px;
+.updateLink{
+    margin: 1vmin;
+    padding: 1vmin;
+    color: var(--white);
+    background-color: var(--orange);
+    font-size: 2vmin;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: .1vmin solid var(--tan-2);
+    border-radius: .5vmin;
+    outline: none;
+    cursor: pointer;
+}
+
+#postText{
+    padding-bottom: 20px;
 }

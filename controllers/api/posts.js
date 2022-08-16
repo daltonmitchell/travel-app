@@ -18,9 +18,10 @@ async function get(req, res){
                 path: 'location'
             }
         })
-        const posts = profile.posts
-        console.log(posts)
-        res.json(posts);
+        if (profile){
+            const posts = profile.posts
+            res.json(posts);
+        }
     } catch(err){
         console.log(err)
         res.status(400).json(err);

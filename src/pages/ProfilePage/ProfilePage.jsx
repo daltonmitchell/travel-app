@@ -27,12 +27,12 @@ export default function ProfilePage({user, profile, setProfile, post, setPost, l
       setPost(posts);
     }
     getPosts();
-  }, [postAdded])
+  }, [postAdded, setPost, setProfile])
 
   const eachPost = post ? post.map((el, idx)=>{
     return (
       <div className='postCell' key={idx}>
-        <Link to={`/post/${el._id}`}>
+        <Link to={`/post/${el._id}`} className='postLink'>
           <p>{el.body}</p>
           <p>{el.location.city}, {el.location.state}</p>
         </Link>
@@ -41,7 +41,7 @@ export default function ProfilePage({user, profile, setProfile, post, setPost, l
 
   return (
     <>
-        <p>{profile.name}</p>
+        { profile ? <p id='profileName'>{profile.name}</p> : null }
         { profile ? null : <ProfileForm user={user} setProfile={setProfile} addProfile={addProfile} /> }
         <PostForm setPost={setPost} location={location} setLocation={setLocation} postAdded={postAdded} setPostAdded={setPostAdded} />
         {eachPost}

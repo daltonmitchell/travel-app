@@ -26,9 +26,11 @@ export default function PostDetailPage(){
 
     return (
       <div className='postCell'>
-        <h1>{onePost ? onePost.body : null}</h1>
-        <h2>{onePost ? `${onePost.location.city}, ${onePost.location.state}` : null}</h2>
-        <Link to={`/post/${id}/update`}>Update</Link>
+        <div id='postText'>
+          <h1>{onePost ? onePost.body : null}</h1>
+          <h4>{onePost ? `${onePost.location.city}, ${onePost.location.state}` : null}</h4>
+        </div>
+        <Link to={`/post/${id}/update`} className='updateLink'>Update</Link>
         <button onClick={deletePost}>Delete</button>
       </div>
     )

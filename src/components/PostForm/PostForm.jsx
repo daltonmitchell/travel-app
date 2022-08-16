@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import './PostForm.css'
 import * as postsAPI from '../../utilities/posts-api';
 import * as locationsAPI from '../../utilities/locations-api';
 
@@ -50,10 +51,10 @@ export default function PostForm({setPost, location, setLocation, postAdded, set
 
     return (
       <div>
-        <div className="form-container">
+        <div className="form-container postForm">
           <form autoComplete="off" onSubmit={handleSubmit}>
             <label>New post:</label>
-            <input type="text" name="body" value={formData.body} onChange={handleChange} required />
+            <textarea type="text" name="body" value={formData.body} onChange={handleChange} required />
             <label>Location: </label>
             <select name="location" value={formData.location} onChange={handleChange} required >
               <option></option>

@@ -17,6 +17,6 @@ async function create(req, res){
 }
 
 async function get(req, res){
-    const profile = await Profile.findOne(req.user.profile);
+    const profile = await Profile.findOne({user: req.user._id});
     res.json(profile)
 }

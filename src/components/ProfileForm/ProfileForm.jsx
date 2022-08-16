@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './ProfileForm.css'
 
 export default function ProfileForm({addProfile, setProfile}) {
     const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ export default function ProfileForm({addProfile, setProfile}) {
   
     return (
       <div>
-        <div className="form-container">
+        <div className="form-container profileForm">
           <form autoComplete="off" onSubmit={handleSubmit}>
             <label>Name</label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} required />

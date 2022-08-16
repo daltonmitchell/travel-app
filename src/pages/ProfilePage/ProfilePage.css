@@ -1,8 +1,23 @@
 .postCell{
-    background-color: rgb(227, 216, 216);
+    background-color: rgb(230, 128, 49);
     border-radius: 25px;
-    margin: 20px auto;
+    margin: 20px 150px;
     padding: 20px;
-    width: 200px;
-    height: 150px;
+    min-width: fit-content;
+    min-height: fit-content;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+#profileName{
+    font-size: 30px;
+    color: white;
+    text-shadow: 1.5px 1.5px rgb(0, 0, 0);
+}
+
+.postLink{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
 }

@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './LocationForm.css'
 
 export default function LocationForm({addLocation, setShowForm}) {
     const states = ['','AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']
@@ -30,7 +31,7 @@ export default function LocationForm({addLocation, setShowForm}) {
   
     return (
       <div>
-        <div className="form-container">
+        <div className="form-container locationForm">
           <form autoComplete="off" onSubmit={handleSubmit}>
             <label>City: </label>
             <input type="text" name="city" value={formData.city} onChange={handleChange} required />
