@@ -12,9 +12,8 @@ Trello: https://trello.com/b/EtBkjUb2/project-4
 ERD: https://lucid.app/lucidchart/7cc01414-d946-4adf-9778-33f5ff424ae5/edit?page=0_0&invitationId=inv_21dd7b82-cb2d-45ec-a749-20a8422089ab#
 <br />
 ![ERD](https://i.imgur.com/4zR2OeM.png)
-
-## Unsolved Problems
-Posts on profile require refresh in order to be viewed. 
+<br />
+Wireframe: https://www.figma.com/file/LLmtGwuEFJJtlOBjUYgFLn/project-4?node-id=0%3A1
 
 ## Icebox
 AAU follow and view other users profiles and posts.
@@ -22,7 +21,9 @@ AAU view location pages and related posts.
 Add photos to posts and profiles.
 Add comments to posts.
 
+## Screenshots
+![AuthPage](https://i.imgur.com/mBVUokD.png)
+![ProfilePage](https://i.imgur.com/22fHHyj.png)
+![LocationsPage](https://i.imgur.com/ifxryuC.png)
+![PostPage](https://i.imgur.com/z1itMrV.png)
 
-ERD: https://lucid.app/lucidchart/7cc01414-d946-4adf-9778-33f5ff424ae5/edit?page=0_0#
-
-Wireframe: https://www.figma.com/file/LLmtGwuEFJJtlOBjUYgFLn/project-4?node-id=0%3A1
